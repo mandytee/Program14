@@ -30,16 +30,52 @@ class CustomSet:
                 return False
         return True
         
-    def lengthMethod(self,):
+    def lengthMethod(self):
     """
     description- determines the length of the list
     precondition- self must be a list
     postcondition- none
     """
+   return len(self._ls)
+        
+    
+    def differenceMethod(self,other):
+    """
+    description- determines the differnce of two sets
+    precondition- self, other must be a list
+    postcondition- finalList is the difference
+    """
     newList = []
-    ct = 0
-    for el in self:
+    otherNewList = []
+    finalList = []
+    for el in self._ls:
         if el not in newList:
             newList.append(el)
-            ct += 1
-    return ct
+    for el in other._ls:
+        if el not in otherNewList._ls:
+            otherNewList.append(el)
+    for el in newList:
+        if el not in otherNewList:
+            finalList.append(el)
+    return finalList
+    
+    def curlyBracesMethod(self):
+    """
+    description- Removes the straight brackets from the list and changes them to curly braces
+    precondition- self must be a list
+    postcondition- Curly braces replace straight brackets
+    """
+    brace1 = '{'
+    comma = ","
+    brace2 = "}"
+    for el in self._ls:
+        brace1 += str(el)
+        if el == givenList[-1]:
+            brace1 += brace2
+        else:
+            brace1 += comma
+    return brace1
+    
+    
+    
+    
