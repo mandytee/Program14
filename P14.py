@@ -75,7 +75,53 @@ class CustomSet:
         else:
             brace1 += comma
     return brace1
+
+def union(self,ls):
+    '''
+    Description: adds unique el from the two lists
+    Precondition: ls, a list
+    Postcondition: changes newList 
+    '''
+    newList = []
+    for el in self._ls:
+        if el not in newList:
+            newList.append(el)
     
+    for el in ls._ls:
+        if el not in newList:
+            newList.append(el)
+    return newList 
+
+def intersection(self,ls):
+    '''
+    Description: adds el that's common betn the two lists
+    Precondition: ls, a list
+    Postcondition: changes newList
+    '''
+    newList = []
+    for el in self._ls:
+        if el in ls._ls:
+            newList.append(el)
+    return newList 
+
+def membership(self,ls):
+    '''
+    Description: checks if ls is in self
+    Precondition: ls, a list
+    Postcondition: changes newList
+    '''
+    if ls in self._ls:
+        return 'yes'
+    else:
+        return 'not there'
+
+
+
+
+
+    
+
+
     
     
     
