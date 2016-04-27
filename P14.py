@@ -29,3 +29,17 @@ class CustomSet:
             if not el in other._ls:
                 return False
         return True
+        
+    def lengthMethod(self,):
+    """
+    description- determines the length of the list
+    precondition- self must be a list
+    postcondition- none
+    """
+    newList = []
+    ct = 0
+    for el in self:
+        if el not in newList:
+            newList.append(el)
+            ct += 1
+    return ct
