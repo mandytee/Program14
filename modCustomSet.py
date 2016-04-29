@@ -43,7 +43,7 @@ class CustomSet:
                 return False
         return True
         
-    def lengthMethod(self):
+    def __len__(self):
         """
         description- determines the length of the list
         precondition- self must be a list
@@ -52,7 +52,7 @@ class CustomSet:
         return len(self._ls)
         
     
-    def differenceMethod(self,other):
+    def __sub__(self,other):
         """
         description- determines the differnce of two sets
         precondition- self, other must be a list
@@ -72,7 +72,7 @@ class CustomSet:
                 finalList.append(el)
         return finalList
     
-    def curlyBracesMethod(self):
+    def __str__(self):
         """
         description- Removes the straight brackets from the list and changes them to curly braces
         precondition- self must be a list
@@ -89,7 +89,7 @@ class CustomSet:
                 brace1 += comma
         return brace1
 
-    def union(self,ls):
+    def or_(self,ls):
         """
         Description: adds unique el from the two lists
         Precondition: ls, a list
@@ -105,9 +105,9 @@ class CustomSet:
                 newList.append(el)
         return newList 
 
-    def intersection(self,ls):
+    def and_(self,ls):
         """
-        Description: adds el that's common betn the two lists
+        Description: adds el that's common between the two lists
         Precondition: ls, a list
         Postcondition: changes newList
         """
@@ -117,7 +117,7 @@ class CustomSet:
                 newList.append(el)
         return newList 
 
-    def membership(self,num):
+    def __contains__(self,num):
         """
         Description: checks if num is in self
         Precondition: self, a list
